@@ -78,7 +78,10 @@ export const AuthProvider: React.FC<Props<any>> = ({ children, provider, signInP
     location.pathname === signInPage
 
   useEffect(() => {
-    provider.onLoad = () => setLoaded(true)
+    provider.onLoad = () => {
+      setAuthenticated(provider.isAuthenticated)
+      setLoaded(true)
+    }
 
     // Handle window changes (switch or minimize window) inside the OS and
     // tab changes inside the browser
