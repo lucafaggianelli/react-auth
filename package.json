@@ -1,7 +1,11 @@
 {
-  "name": "react-auth",
+  "name": "@lucafaggianelli/react-auth",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucafaggianelli/react-auth.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -30,5 +34,8 @@
       "import": "./dist/react-auth.es.js",
       "require": "./dist/react-auth.umd.js"
     }
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
   }
 }
