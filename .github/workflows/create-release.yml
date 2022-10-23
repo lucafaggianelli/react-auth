@@ -16,15 +16,14 @@ jobs:
 
       - name: Get package version
         run: |
-          ./get-version.js
-          echo $VERSION
+          ./get-version.js >> $GITHUB_ENV
 
       - name: Push tag
         id: tag_version
         uses: mathieudutour/github-tag-action@v6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          custom_tag: $VERSION
+          custom_tag: ${{ env.PACKAGE_VERSION }}
 
       - name: Create a GitHub release
         uses: ncipollo/release-action@v1
